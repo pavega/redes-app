@@ -1,13 +1,12 @@
 <p>
   <mat-toolbar color="primary">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
     <span routerLink="/home">Home</span>
     <span class="example-spacer"></span>
-    <span routerLink="{{'/'+role+'site'}}">{{role}}</span>
-    <span routerLink="/login">{{email}}</span>
-    <button *ngIf="authService.isLoggedIn$ | async" (click)="logout()" id="logoutId" class="navButton">
+    <button mat-raised-button color="primary" routerLink="{{'/'+role+'site'}}">{{role}}</button>
+    <button mat-raised-button color="primary" routerLink="/login">{{email}}</button>
+    <!--<span routerLink="{{'/'+role+'site'}}">{{role}}</span>
+    <span routerLink="/login">{{email}}</span>-->
+    <button mat-raised-button color="primary" *ngIf="authService.isLoggedIn$ | async" (click)="logout()">
       Log out
   </button>
   </mat-toolbar>
