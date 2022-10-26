@@ -1,0 +1,63 @@
+<app-navbar></app-navbar>
+
+<div class="main-div">
+
+
+<div class="text-center">
+  <section class="page-section" id="loginSection">
+
+        <mat-card class="example-card">
+          <div class="margin" >
+            <br>
+            <h3 class="text-center mb-4">Log In</h3>
+
+            <mat-divider></mat-divider>
+            <br>
+
+            <form [formGroup]="loginForm" (ngSubmit)="login()" #formDir="ngForm" id="user-form" class="login-form">
+              <div class="form-group">
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Email</mat-label>
+                    <input formControlName="email" type="email" autocomplete="off" matInput placeholder="xxxx@xxxx.com">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Password</mat-label>
+                    <input  formControlName="password" type="password" autocomplete="off" matInput placeholder="">
+                </mat-form-field>
+
+                <button mat-raised-button color="primary" type="submit">Log In</button>
+
+              </div>
+          </form>
+
+          </div>
+        </mat-card>
+  </section>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                              <!--<form [formGroup]="loginForm" (ngSubmit)="login()" #formDir="ngForm" id="user-form" class="login-form">
+                                <div class="form-group">
+
+                                    <input formControlName="email" type="email" autocomplete="off" name="emailLogin" id="emailLogin" class="form-control rounded-left" placeholder="Email address" required="true">
+
+                                    <input formControlName="password" type="password" autocomplete="off" name="passwordLogin" id="passwordLogin" class="form-control rounded-left" placeholder="Password" required="true">
+
+                                    <button class="form-control btn btn-primary rounded submit px-3" type="submit">Log In</button>
+                                </div>
+                            </form>-->
