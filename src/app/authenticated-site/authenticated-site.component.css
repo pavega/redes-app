@@ -1,0 +1,12 @@
+p {
+    padding-top: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 400%;
+    text-align:center;
+    font-family:Arial;
+    font-variant:small-caps;
+    letter-spacing:5px;
+    line-height: 75%;
+    color:#3f51b5;
+}

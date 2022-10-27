@@ -24,8 +24,19 @@ import { AdminSiteComponent } from './admin-site/admin-site.component';
 import { AuthenticatedSiteComponent } from './authenticated-site/authenticated-site.component';
 import { AuthServiceService } from './services/auth-service.service';
 import { HasRoleGuard } from './guards/has-role.guard';
+import { BlockComponent } from './block/block.component';
 
 const appRoutes: Routes = [
+  {
+    path: 'localhost:4200',
+    component: HomeComponent,
+    data: { title: 'Home'}
+  },
+  {
+    path: 'blockme',
+    component: BlockComponent,
+    data: { title: 'Blocked'}
+  },
   {
     path: 'home',
     component: HomeComponent,
@@ -62,7 +73,8 @@ const appRoutes: Routes = [
     HomeComponent,
     NavbarComponent,
     AdminSiteComponent,
-    AuthenticatedSiteComponent
+    AuthenticatedSiteComponent,
+    BlockComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

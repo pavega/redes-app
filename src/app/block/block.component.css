@@ -1,0 +1,19 @@
+img{
+    width:25%;
+    height: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    padding-top: 5%;
+}
+
+p{
+    padding-top: 2%;
+    color: red;
+    font-size: 300%;
+    display: block;
+    text-align: center;
+}
+html{
+    background-color: black;
+}
