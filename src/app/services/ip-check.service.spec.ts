@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { IpCheckService } from './ip-check.service';
 
 describe('IpCheckService', () => {

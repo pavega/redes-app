@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IpCheckService } from './ip-check.service';
+import { IpCheckService } from './services/ip-check.service';
 
 @Component({
   selector: 'app-root',
