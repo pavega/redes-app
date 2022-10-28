@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -25,6 +25,7 @@ import { AuthenticatedSiteComponent } from './authenticated-site/authenticated-s
 import { AuthServiceService } from './services/auth-service.service';
 import { HasRoleGuard } from './guards/has-role.guard';
 import { BlockComponent } from './block/block.component';
+
 
 const appRoutes: Routes = [
   {
@@ -94,6 +95,7 @@ const appRoutes: Routes = [
     AuthServiceService,
     HttpClient
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
