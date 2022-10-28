@@ -28,11 +28,6 @@ import { BlockComponent } from './block/block.component';
 
 const appRoutes: Routes = [
   {
-    path: 'localhost:4200',
-    component: HomeComponent,
-    data: { title: 'Home'}
-  },
-  {
     path: 'blockme',
     component: BlockComponent,
     data: { title: 'Blocked'}
@@ -63,7 +58,9 @@ const appRoutes: Routes = [
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'
-  }
+  },
+  {path: '404', component: HomeComponent},
+ {path: '**', redirectTo: '/home'}
 ];
 
 @NgModule({
