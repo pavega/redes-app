@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { catchError, Observable, of, tap } from 'rxjs';
 
 
-const authEndpoint = 'http://localhost:8097/api/auth';
+const authEndpoint = 'http://140.84.168.70:8097/api/auth';
 
 
 const httpOptions = {
