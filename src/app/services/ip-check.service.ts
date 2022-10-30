@@ -27,7 +27,7 @@ export class IpCheckService {
       this.http.get("https://api.ipify.org/?format=json").subscribe(
         (response) => {
           this.ipAddress = response;
-          this.http.get("http://localhost:8097/api/blocklist/"+this.ipAddress.ip).subscribe(
+          this.http.get(blockedEndpoint+this.ipAddress.ip).subscribe(
             (response2) => {
               if (response2 != null) this.router.navigate(['blockme']); 
             }  
@@ -50,11 +50,11 @@ export class IpCheckService {
         (response) => {
           actualIp = response;
           ipInfo.ipAddress = actualIp.ip;
-          this.http.get("http://localhost:8097/api/blocklist/"+actualIp.ip).subscribe(
+          this.http.get(blockedEndpoint+'/'+actualIp.ip).subscribe(
             (response2) => {
               if (response2 == null) 
               {
-                this.http.post("http://localhost:8097/api/blocklist/add/",ipInfo).subscribe(
+                this.http.post(blockedEndpoint+'/add',ipInfo).subscribe(
                   (response3) => {
                     alert("You have being blocked")
                   }  
