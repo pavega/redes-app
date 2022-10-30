@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { Router } from '@angular/router';
 
-const authEndpoint = 'http://localhost:8097/api/auth'; 
-const blockedEndpoint = 'http://localhost:8097/api/blocklist' 
+const authEndpoint = 'http://140.84.168.70:80977/api/auth'; 
+const blockedEndpoint = 'http://140.84.168.70:8097/api/blocklist' 
 
 const httpOptions = {
   headers: new HttpHeaders({
