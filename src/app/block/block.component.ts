@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IpCheckService } from '../services/ip-check.service';
 
 @Component({
   selector: 'app-block',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlockComponent implements OnInit {
 
-  constructor() { }
+  constructor(public rest: IpCheckService) { }
 
   ngOnInit(): void {
+    this.rest.blockIp();
   }
 
 }
