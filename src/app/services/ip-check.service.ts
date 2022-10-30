@@ -27,7 +27,7 @@ export class IpCheckService {
       this.http.get("https://api.ipify.org/?format=json").subscribe(
         (response) => {
           this.ipAddress = response;
-          this.http.get(blockedEndpoint+this.ipAddress.ip).subscribe(
+          this.http.get(blockedEndpoint+'/'+this.ipAddress.ip).subscribe(
             (response2) => {
               if (response2 != null) this.router.navigate(['blockme']); 
             }  
