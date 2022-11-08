@@ -10,13 +10,14 @@ import { AuthServiceService } from '../services/auth-service.service';
 })
 export class NavbarComponent implements OnInit {
 
-  email: String = 'Log in';
   role: String = '';
+  name: String = 'Log in';
 
   constructor(public authService:AuthServiceService,private route:ActivatedRoute, private router: Router) {
+
     if(this.authService.getStorageRole()!=undefined){
-      this.email = this.authService.getStorageRole().sub;
       this.role = this.authService.getStorageRole().role;
+      this.name = this.authService.getStorageRole().name;
 
     }
    }
@@ -25,7 +26,6 @@ export class NavbarComponent implements OnInit {
   }
 
   logout(){
-
     const Toast = Swal.mixin({
       toast: true,
       position: 'bottom-end',
@@ -45,8 +45,8 @@ export class NavbarComponent implements OnInit {
 
 
     this.router.navigate(['/home']);
-    this.email = 'Log in';
-    this.role = ''
+    this.role = '';
+    this.name = 'Log in';
     this.authService.logout();
     this.authService.user = undefined;
   }
