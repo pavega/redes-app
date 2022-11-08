@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 const authEndpoint = 'https://api.grupoe.meseguercr.com/api/auth'; 
 const blockedEndpoint = 'https://api.grupoe.meseguercr.com/api/blocklist' 
@@ -40,6 +41,18 @@ export class IpCheckService {
 
   blockIp(){
     
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'bottom-end',
+      showConfirmButton: false,
+      timer: 1700,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    
     let actualIp: any; 
     const ipInfo = {
       'Id':0,
@@ -56,10 +69,20 @@ export class IpCheckService {
               {
                 this.http.post(blockedEndpoint+'/add',ipInfo).subscribe(
                   (response3) => {
-                    alert("You have being blocked")
+                    Swal.fire({
+                      icon: 'error',
+                      title: 'Oops...',
+                      text: 'You have been blocked due to access to blockme address',
+                    });
                   }  
                 );
-              } 
+              } else {
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'Your Ip is already blocked.',
+                });
+              }
             }  
           );
         },
