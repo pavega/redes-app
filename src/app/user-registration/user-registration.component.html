@@ -1,18 +1,23 @@
 <app-navbar></app-navbar>
 
 <div class="text-center">
-  <section class="page-section" id="loginSection">
+  <section class="page-section">
 
         <mat-card class="example-card">
           <div class="margin" >
             <br>
-            <h3 class="text-center mb-4">Log In</h3>
+            <h3 class="text-center mb-4">Sign Up</h3>
 
             <mat-divider></mat-divider>
             <br>
 
-            <form [formGroup]="loginForm" (ngSubmit)="login()" #formDir="ngForm" id="user-form" class="login-form">
+            <form [formGroup]="signUpForm" (ngSubmit)="signup()" #formDir="ngForm">
               <div class="form-group">
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Name</mat-label>
+                    <input formControlName="name" type="text" autocomplete="off" matInput placeholder="John Williams">
+                </mat-form-field>
 
                 <mat-form-field class="example-full-width" appearance="fill">
                   <mat-label>Email</mat-label>
@@ -24,12 +29,7 @@
                     <input  formControlName="password" type="password" autocomplete="off" matInput placeholder="">
                 </mat-form-field>
 
-                <button mat-raised-button color="primary" type="submit">Log In</button>
-
-                <div>
-                  <br>
-                  <label class="signup" routerLink="/register">Sign Up!</label>
-                </div>
+                <button mat-raised-button color="primary" type="submit">Sign Up</button>
 
               </div>
           </form>

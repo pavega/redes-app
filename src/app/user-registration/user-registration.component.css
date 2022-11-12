@@ -5,8 +5,7 @@
   margin-right: auto;
   padding: 20px;
   border-radius: 20px;
-  height: 450px;
-  height: 300px;
+  height: 350px;
 }
 
 .example-card {
@@ -19,11 +18,4 @@
 
 .example-full-width {
   width: 100%;
-}
-
-.signup{
-  cursor: pointer;
-  color:blue;
-  text-decoration: underline;
-  font-size: 13px;
 }

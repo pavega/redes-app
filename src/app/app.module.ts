@@ -24,6 +24,7 @@ import { AuthenticatedSiteComponent } from './authenticated-site/authenticated-s
 import { AuthServiceService } from './services/auth-service.service';
 import { HasRoleGuard } from './guards/has-role.guard';
 import { BlockComponent } from './block/block.component';
+import { UserRegistrationComponent } from './user-registration/user-registration.component';
 
 
 const appRoutes: Routes = [
@@ -55,12 +56,17 @@ const appRoutes: Routes = [
     data: { role: 'Authenticated' }
   },
   {
+    path: 'register',
+    component: UserRegistrationComponent,
+    data: { title: 'Register'}
+  },
+  {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'
   },
   {path: '404', component: HomeComponent},
- {path: '**', redirectTo: '/home'}
+  {path: '**', redirectTo: '/home'}
 ];
 
 @NgModule({
@@ -71,7 +77,8 @@ const appRoutes: Routes = [
     NavbarComponent,
     AdminSiteComponent,
     AuthenticatedSiteComponent,
-    BlockComponent
+    BlockComponent,
+    UserRegistrationComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
