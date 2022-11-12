@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-const UserEndpoint = 'https://api.grupoe.meseguercr.com/api/user/';
+const UserEndpoint = 'https://api.grupoe.meseguercr.com/api/user';
 
 const httpOptions = {
   headers: new HttpHeaders({
