@@ -19,12 +19,14 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { MatDividerModule  } from '@angular/material/divider';
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
 import { AdminSiteComponent } from './admin-site/admin-site.component';
 import { AuthenticatedSiteComponent } from './authenticated-site/authenticated-site.component';
 import { AuthServiceService } from './services/auth-service.service';
 import { HasRoleGuard } from './guards/has-role.guard';
 import { BlockComponent } from './block/block.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { AdminRegistrationComponent } from './admin-registration/admin-registration.component';
 
 
 const appRoutes: Routes = [
@@ -61,6 +63,12 @@ const appRoutes: Routes = [
     data: { title: 'Register'}
   },
   {
+    path: 'registerUsers',
+    component: AdminRegistrationComponent,
+    canActivate: [HasRoleGuard],
+    data: { role: 'Admin' }
+  },
+  {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'
@@ -78,7 +86,8 @@ const appRoutes: Routes = [
     AdminSiteComponent,
     AuthenticatedSiteComponent,
     BlockComponent,
-    UserRegistrationComponent
+    UserRegistrationComponent,
+    AdminRegistrationComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -95,7 +104,8 @@ const appRoutes: Routes = [
     MatTabsModule,
     MatDividerModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule
   ],
   providers: [
     AuthServiceService,

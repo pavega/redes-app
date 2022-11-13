@@ -4,6 +4,7 @@
     <button mat-raised-button color="primary" routerLink="{{'/'+role+'site'}}">{{role}}</button>
     <button mat-raised-button color="primary" routerLink="/login" *ngIf="!(authService.isLoggedIn$ | async)">{{name}}</button>
     <button mat-raised-button color="primary" routerLink="/home" *ngIf="authService.isLoggedIn$ | async" enable="false">{{name}}</button>
+    <button mat-raised-button color="primary" routerLink="/registerUsers" *ngIf="authService.isLoggedIn$ | async">Registration</button>
     <button mat-raised-button color="primary" *ngIf="authService.isLoggedIn$ | async" (click)="logout()">
       Log out
   </button>

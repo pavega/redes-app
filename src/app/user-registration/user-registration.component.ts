@@ -12,7 +12,6 @@ import { UsersService } from '../services/users.service';
 export class UserRegistrationComponent implements OnInit {
 
   signUpForm: FormGroup;
-  errorMessage: any;
 
   constructor(private fb: FormBuilder,  public usersService: UsersService, private router: Router) {
 

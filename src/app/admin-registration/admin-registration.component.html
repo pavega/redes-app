@@ -1,0 +1,50 @@
+<app-navbar></app-navbar>
+
+<div class="text-center">
+  <section class="page-section">
+
+        <mat-card class="example-card">
+          <div class="margin" >
+            <br>
+            <h3 class="text-center mb-4">Add User</h3>
+
+            <mat-divider></mat-divider>
+            <br>
+
+            <form action="">
+              <div class="form-group">
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Name</mat-label>
+                    <input [(ngModel)]="userData.name" type="text" name="name" matInput placeholder="John Williams">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Email</mat-label>
+                    <input [(ngModel)]="userData.email" type="email" name="email" matInput placeholder="xxxx@xxxx.com">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Password</mat-label>
+                    <input [(ngModel)]="userData.password" type="password" name="password" matInput placeholder="">
+                </mat-form-field>
+
+                <mat-form-field class="select" appearance="fill">
+                  <mat-label>Select a role</mat-label>
+                  <mat-select disableRipple [(ngModel)]="userData.role.id_Role" name="role">
+                    <mat-option value=1 selected>Admin</mat-option>
+                    <mat-option value=2 selected>Authenticated</mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                <div>
+                  <button mat-raised-button color="primary" (click)="add()">Add</button>
+                </div>
+
+              </div>
+          </form>
+
+          </div>
+        </mat-card>
+  </section>
+</div>
